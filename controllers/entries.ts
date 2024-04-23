@@ -13,7 +13,10 @@ entriesRouter.post("/", (request: Request, response: Response) => {
     const entrie = new Entrie(body)
 
     entrie.save()
-        .then(response => console.log('Entrie saved', response))
+        .then(res => {
+            console.log('Entrie saved', res)
+            response.json(res)
+        })
         .catch(err => console.error(err))
 })
 

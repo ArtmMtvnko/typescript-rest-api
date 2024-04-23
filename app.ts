@@ -1,11 +1,19 @@
 import express, { Express, Request, Response } from 'express'
-import entrieRouter from './controllers/entries'
-
-
 const app: Express = express()
-const port: number = 8000
 
-import './model/Entrie'
+import { connect, connection } from 'mongoose'
+import entrieRouter from './controllers/entries'
+import config from './utils/config'
+import cors from 'cors'
+
+
+console.log('Connectiong to MongoDB...')
+connect(config.MONGODB_URI!) // also can be used 'config.MONGODB_URI as string'
+    .then(() => console.log('Successfuly connected to MongoDB'))
+    .catch(err => console.error(err))
+
+app.use(cors())
+app.use(express.json())
 
 app.get("/", (request: Request, response: Response) => {
     response.send("HELLOOOOOOO")
@@ -13,6 +21,7 @@ app.get("/", (request: Request, response: Response) => {
 
 app.use("/api/entries", entrieRouter)
 
-app.listen(port, () => {
-    console.log(`server running on port ${port}\nlink: http://localhost:${port}`)
-})
+// TODO: add nodemon and tsc --watch
+// TODO: add middleware
+
+export default app

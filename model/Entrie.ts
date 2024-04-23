@@ -1,4 +1,4 @@
-import { Schema, model, connect, connection } from 'mongoose'
+import { Schema, model } from 'mongoose'
 
 type TypeAddres = {
     country: string,
@@ -23,11 +23,11 @@ const entrieSchema = new Schema<IEntrie>({
 export const Entrie = model<IEntrie>('Entrie', entrieSchema)
 
 // ===============================
-const entrie: IEntrie = {
-    name: 'Test',
-    age: 42,
-    addres: {
-        country: 'UK',
-        city: 'London'
-    }
-}
+// const entrie: IEntrie = {
+//     name: 'Test',
+//     age: 42,
+//     addres: {
+//         country: 'UK',
+//         city: 'London'
+//     }
+// }

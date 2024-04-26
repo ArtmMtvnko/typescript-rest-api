@@ -21,13 +21,3 @@ const entrieSchema = new Schema<IEntrie>({
 })
 
 export const Entrie = model<IEntrie>('Entrie', entrieSchema)
-
-// ===============================
-// const entrie: IEntrie = {
-//     name: 'Test',
-//     age: 42,
-//     addres: {
-//         country: 'UK',
-//         city: 'London'
-//     }
-// }

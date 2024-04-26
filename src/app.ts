@@ -2,7 +2,7 @@ import express, { Express, Request, Response } from 'express'
 const app: Express = express()
 
 import { connect, connection } from 'mongoose'
-import entrieRouter from './controllers/entries'
+import entriesRouter from './routes/entries.rotes'
 import config from './utils/config'
 import cors from 'cors'
 
@@ -19,7 +19,7 @@ app.get("/", (request: Request, response: Response) => {
     response.send("HELLOOOOOOO")
 })
 
-app.use("/api/entries", entrieRouter)
+app.use("/api/entries", entriesRouter)
 
 // TODO: add nodemon and tsc --watch
 // TODO: add middleware

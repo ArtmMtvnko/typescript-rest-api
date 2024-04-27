@@ -5,7 +5,7 @@ const entriesRouter = express.Router()
 const entriesController = new EntriesController()
 
 entriesRouter.get("/", entriesController.getAllEntries)
-
+entriesRouter.get("/:id", entriesController.getEntrie)
 entriesRouter.post("/", entriesController.createEntrie)
 
 export default entriesRouter

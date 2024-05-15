@@ -8,7 +8,7 @@ import cors from 'cors'
 
 
 console.log('Connectiong to MongoDB...')
-connect(config.MONGODB_URI!) // also can be used 'config.MONGODB_URI as string'
+connect(config.MONGODB_URI!) // also can be used "config.MONGODB_URI as string"
     .then(() => console.log('Successfuly connected to MongoDB'))
     .catch(err => console.error(err))
 
